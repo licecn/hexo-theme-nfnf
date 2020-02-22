@@ -1,0 +1,8 @@
+<!--SEO-->
+  <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
+<% var robotMeta = theme.robot||'all'; -%>
+  <meta name="robots" content="<%= robotMeta%>" />
+  <meta name="google" content="<%= robotMeta%>" />
+  <meta name="googlebot" content="<%= robotMeta%>" />
+  <meta name="verify" content="<%= robotMeta%>" />
+  <link rel="canonical" href="<%-url%>">

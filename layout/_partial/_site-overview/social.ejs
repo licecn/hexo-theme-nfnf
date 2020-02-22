@@ -1,0 +1,6 @@
+<% if(theme.social){-%>
+<div class="links-of-author"><% theme.social.forEach(function(item){%>
+              <span class="links-of-author-item">
+                <a href="<%- item.href%>" target="_blank" title="<%- item.name%>" rel="external nofollow"><i class="fa fa-fw fa-<%- item.icon%>"></i><%- item.name%></a>
+              </span><%})-%>
+            </div><%}%>

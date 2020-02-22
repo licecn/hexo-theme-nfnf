@@ -1,0 +1,38 @@
+<% if (pagination == 2){ -%>
+  <% page.posts.each(function(post){ -%>
+    <%- partial('article', {post: post, index: true}) -%>
+  <% }) -%>
+<% } else { -%>  
+  <% if(is_tag()){-%>
+      <div class="archives-tag-wrap">
+      <h1>标签：<%=page.tag%></h1>
+  <%}-%>
+  <% if(is_category()){-%>
+      <div class="archives-category-wrap">
+      <h1>分类：<%=page.category%></h1>
+  <%}-%>
+  <% if (is_archive()){ -%>
+    <div class="archives-tags-wrap"><blockquote><span><%= __('post_total_count', site.posts.length) %></span></blockquote>
+  <% } -%>
+  <% var last; -%>
+  <% page.posts.each(function(post, i){ -%>
+    <% var year = post.date.year(); -%>
+    <% if (last != year){ -%>
+      <% if (last != null){ -%>
+        </div></section>
+      <% } -%>
+      <% last = year; %>
+        <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h2><a href="<%- url_for(config.archive_dir + '/' + year+'/') %>" class="archive-year"><%= year %></a></h2>
+        </div>
+        <div class="archives">
+    <% } %>
+    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+  <% }) %>
+  <% if (page.posts.length){ %>
+    </div></section>
+  <% } %>
+  </div>
+  <%- partial('pagination')-%>
+<% } %> 

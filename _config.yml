@@ -1,0 +1,157 @@
+# ---------------------------------------------------------------
+#   Site Information And Theme Configuration Settings
+#   language: zh-CN
+#   theme: nfnf
+# ---------------------------------------------------------------
+## menu
+menu:
+  - page: 主页
+    url: /
+  - page: Java笔记
+    url: /categories/Java笔记/
+  - page: SEO优化
+    url: /categories/SEO优化/
+  - page: 生活DAY
+    url: /categories/生活DAY/
+  - page: About
+    url: /about/
+  - page: 友链
+    url: /links/
+
+## favicon
+favicon: /favicon.ico
+
+## avatar
+avatar: /img/avatar.jpg
+
+## 截取文章首页描述字数
+excerptLength: 120
+
+## widgets
+widgets:
+  - social
+  - friends
+  - tagcloud
+
+## 社交
+social:
+  - name: Github
+    icon: github
+    href: //github.com/licecn
+  - name: E-Mail
+    icon: envelope
+    href: mailto:licecn_com@163.com
+  - name: Gitee
+    icon: git
+    href: //gitee.com/licesn
+
+## 尾部社交
+footerSocial:
+  github:
+    title: GitHub
+    url: //github.com/licecn
+  gitee:
+    title: Gitee
+    url: //gitee.com/licesn
+  weibo:
+    title: Weibo
+    url: //weibo.com/ailicecn
+
+## Timer
+runTime:
+  start: 2014
+  end: 2020
+
+## 友情链接
+links:
+  - 彗行说: https://liuyude.com/
+
+##meta
+twitter: 
+google_plus:
+fb_admins:
+fb_app_id:
+
+## 缩略图自定义随机图片
+defaultImgs:
+  -
+
+## bootstrap配置
+bootstrap:
+
+
+## ICON配置
+fontAwesome:
+
+
+## 文章过期提醒功能
+warning:
+  days: 300
+  text: '本文于%d天之前发表，文中内容可能已经过时。'
+
+## 文章内声明
+declaration:
+  enable: true
+  title: '转载声明'
+  tip: |-
+      商业转载请联系作者获得授权,非商业转载请注明出处 © 
+
+## 主题评论
+
+### gitment
+gitment:
+  enable: false
+  owner:
+  repo:
+  client_id:
+  client_secret:
+  perPage: 10
+
+### 来必力
+livere:
+  enable: false
+  livere_uid: MTAyMC8zMzA1MS85NjEz
+
+### 友言评论(服务不稳定)
+uyan:
+  enable: false
+  uyan_id: 1966422
+
+### Disqus评论
+disqus:
+  enable: false
+  shortname: snippet
+  count: false
+
+### 畅言评论(需要ICP备案)
+changyan:
+  enable: true
+  appid: cytDoAvHs
+  conf: 6cf8af10c1dc2714a4527e84f4d7ebcb
+
+valine:
+  enable: false
+  appid: Nrm8yrOp6Ln9NhDMVz6XBfam-gzGzoHsz
+  appkey: bWwCKIo5gkmte7KkYeeKb3fk
+
+## 网站访问统计
+
+### 网盟CNZZ统计
+cnzz_analytics: 
+
+### 百度统计
+baidu_analytics: 14f8bd14904d711e1bf86a3cfb12ae5f
+
+### 谷歌统计
+google_analytics:
+
+### 腾讯分析
+tencent_analytics:
+
+### 百度文章推送
+baidu_push:
+
+#网站主题配置
+
+robot: 'all' ### 控制搜索引擎的抓取和索引编制行为，默认为all
+version: 1.0.0

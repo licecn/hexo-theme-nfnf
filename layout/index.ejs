@@ -1,0 +1,42 @@
+<!-- 左侧文章循环开始 -->
+          <ul class="list-unstyled">
+     <%if(page.posts && page.posts.length){
+     page.posts.forEach(function(post){
+       if(lazyImage(post).length>0){-%>
+       <li class="have-img">
+       <%}else{-%>
+       <li>
+       <%}-%>
+       <div class="content">
+                <a href="<%-url_for(post.path)%>" target="_blank" class="title"><%-post.title%></a>
+                <div class="meta">
+                  <!--<span class="heart-meta"><i class="fa fa-heart" aria-hidden="true"></i> 10
+                  </span>-->
+                  <a href="/categories/<%=post.categories.data[0].name%>/" target="_blank" class="category"><i class="fa fa-list" aria-hidden="true"></i> <%=post.categories.data[0].name%>
+                  </a>
+                  <a href="#" target="_blank"><i class="fa fa-commenting" aria-hidden="true"></i> 1
+                  </a>
+                  <span class="pv-meta"><i class="fa fa-eye" aria-hidden="true"></i> 9527
+                  </span>
+                  <span class="tags-meta"><i class="fa fa-tags"></i> <%if(post.tags&&post.tags.length){%><%-list_tags(post.tags,{show_count:false,class:'article-tag'})%><%}%>
+                  </span>
+                </div>
+                <div class="abstract">
+                <% if(post.excerpt) { %>
+                <%- post.excerpt%>
+                <div class="post-button text-center">
+                <a class="btn" href="<%- url_for(post.path) %>#more" rel="contents">
+                阅读全文 »
+                </a>
+                </div>
+                <% } else { %>
+                    <%- post.content %>
+                <% } %>
+                </div>
+
+              </div>
+            </li>
+     <%})}-%>
+     </ul>
+          <!-- 左侧文章循环结束 -->
+     <%- partial('_partial/pagination') %>

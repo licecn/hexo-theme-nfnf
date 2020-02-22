@@ -1,0 +1,22 @@
+<div class="archives-tags-wrap">
+    <div class="tags-row">
+        <!-- 标签列表 -->
+        <% site.tags.filter(tag=>tag.length).sort('name').map(function(tag){  %>
+        <div class="archives-wrap">
+            <div class="archive-year-wrap" id="<%= tag.name %>">
+                <h2 class="archive-tag"><a href="<%=url_for(tag.path)%>" title="<%= tag.name %>"><%= tag.name %></a></h2>
+            </div>
+            <div class="archives">
+                <% tag.posts.sort('-date').map(function(post, i){  %>
+                    <%- partial('_partial/archive-post', {post: post, index: true}) %>
+                    <% if (post.subtitle && post.subtitle.length) { %>
+                        <h3 class="post-subtitle">
+                            <%- post.subtitle %>
+                        </h3>
+                    <% } %>
+                <% }) %>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<nav class="site-state">
+              <div class="site-state-item site-state-posts">
+                <a href="/<%=config.archive_dir%>/">
+                  <span class="site-state-item-count"><%-site.posts.length%></span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+              <div class="site-state-item site-state-categories">
+                <a href="/<%=config.category_dir%>/">
+                  <span class="site-state-item-count"><%-site.categories.filter(cat=>cat.length).length%></span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+              <div class="site-state-item site-state-tags">
+                <a href="/<%=config.tag_dir%>/">
+                  <span class="site-state-item-count"><%-site.tags.filter(tag=>tag.length).length%></span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            </nav>

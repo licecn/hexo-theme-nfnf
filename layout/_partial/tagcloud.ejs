@@ -1,0 +1,8 @@
+<%if(!is_post()){%>
+<div class="site-tags">
+            <h4 class="cc-title"><%= __('tagcloud') %></h4>
+            <ul class="cc-all-tname clearfix"><%var a=0;var tags=site.tags.filter(tag=>tag.length);tags.forEach(function(tag){if(tag.length>1){a=a>3?1:++a;%>
+              <li class="cc-tname"><a href="<%-url_for(tag.path)%>" class="tstyle-<%=a%>"><%-tag.name%> (<%-tag.length%>)</a></li><%}});%>
+            </ul>
+          </div>
+<%}%>

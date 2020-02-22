@@ -1,0 +1,18 @@
+<% if(theme.links && theme.links.length && is_home()){ -%>
+<div class="links-of-blogfriends">
+              <div class="links-of-blogfriends-title">
+                <i class="fa fa-fw fa-link"></i>
+                <%= __('friend_links') %>
+              </div>
+              <ul class="links-of-blogfriends-list">
+<% var name,url;
+                 theme.links.forEach(function(item){
+                   for(var property in item){
+                     name=property;
+                     url=item[property];
+                   }-%>
+                <li class="links-of-blogfriends-item">
+                  <a href="<%- url %>" title="<%= name%>" target="_blank"><%= name%></a>
+                </li><%});-%>                                
+              </ul>
+            </div><% } -%>

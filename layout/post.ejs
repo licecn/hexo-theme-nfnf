@@ -1,0 +1,32 @@
+<div class="site-post-wrap">
+	<article class="post">
+	    <h1 class="post-head"><%- page.title %></h1>
+	    <div class="post-meta">
+        <time datetime="<%= date_xml(page.date) %>" itemprop="datePublished"><%= date(page.date)+' '+time(page.date) %></time>
+        <span>字数:9527</span>
+        <span>阅读:9527</span>
+	    </div>
+	    <div class="post-body">
+	        <%- page.content %>
+	    </div>
+	    <div class="post-tag">
+          <%-list_tags(page.tags,{show_count:false,class:'article-tag'})%>
+	    </div>
+	</article>
+	<div class="post-prev-next">
+	    <div class="article-nav prev-next-wrap clearfix">
+        <% if(page.prev){ %>
+        <a href="<%- url_for(page.prev.path) %>" class="pre-post btn btn-default" title='<%- page.prev.title %>'>
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs"><%- page.prev.title %></span>
+        </a>
+        <% } %>
+        <% if(page.next){ %>
+        <a href="<%- url_for(page.next.path) %>" class="next-post btn btn-default" title='<%- page.next.title %>'>
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs"><%- page.next.title %></span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+        <% } %>
+        </div>
+    </div>
+</div>

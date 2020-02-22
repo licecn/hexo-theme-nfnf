@@ -1,0 +1,16 @@
+<!--Title-->
+<%    var title = page.title;
+    if (is_archive()) {
+        if (is_year() || is_month()) {
+            title = __('archive_b', page.year + (page.month ? '/' + page.month : ''));
+        } else {
+            title = __('archive_a');
+        }
+    } else if (is_category()) {
+        title = __('category') + ': ' + page.category;
+    } else if (is_tag()) {
+        title = __('tag') + ': ' + page.tag;
+    }-%>
+  <title><% if (title){ %><%= title %> | <%= config.title %><% }else{%><%= config.title %> | <%= config.subtitle %><% } %></title>
+<% if (theme.favicon){ -%>
+  <link rel="icon" href="<%- theme.favicon %>"><% } -%>

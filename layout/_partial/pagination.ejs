@@ -1,0 +1,12 @@
+          <%if(page.total > 1){-%>
+          <!-- 分页开始 -->
+          <nav aria-label="分页">
+            <div class="pagination">
+            <% var prev_text= __('prev');var next_text= __('next')-%>
+            <%- paginator({
+                prev_text: "<i class='fa fa-angle-left'></i> "+prev_text,
+                next_text: next_text+" <i class='fa fa-angle-right'></i>"
+            }) %>            
+            </div>
+          </nav>
+          <!-- 分页结束 --><%}%>
